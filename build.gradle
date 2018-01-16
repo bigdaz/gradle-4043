@@ -1,0 +1,17 @@
+plugins {
+ id 'java'
+}
+
+repositories {
+  maven { url "repo" }
+}
+
+dependencies {
+  compile 'commons-logging:commons-logging:1.2'
+}
+
+task resolve {
+  doLast {
+    println configurations.compile.collect { it.name }
+  }
+}
